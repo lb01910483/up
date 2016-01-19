@@ -61,16 +61,17 @@
               {
                 nearestArea=1;
 
+                $("div").append(' <img src="http://placehold.it/300x500/007C2D/FFF200" alt="">');
               }
               else if(beaconArray[i].name=="area02" && beaconArray[i].px==1)
               {
                 nearestArea=2;
-
+                  $("div").append(' <img src="http://placehold.it/300x500/FF0000/FFF200" alt="">');
               }
               else if(beaconArray[i].name=="area03" && beaconArray[i].px==1)
               {
                 nearestArea=3;
-                
+                  $("div").append(' <img src="http://placehold.it/300x500/0000E3/FFF200" alt="">');
 
               }
               
@@ -82,8 +83,7 @@
             if(nearestArea!=0)
             {
               lastNearestArea=nearestArea;
-              $(".itemArea").removeClass("currentArea");
-              $("#itemArea"+nearestArea).addClass("currentArea");
+
 
               $("#locationName").html(locationDisplayName[nearestArea-1]);
             }
@@ -92,21 +92,6 @@
               $(".itemArea").removeClass("currentArea");
             }
         } 
-
-        var imgCounter=0;
-
-        function takePhoto()
-        {
-            beaconManager.requestPhotoCamera(600,600, function(result) {
-              
-              if(result!="0" && lastNearestArea!=0 )
-              {
-                   $("#imageArea"+lastNearestArea).append("<img id='p"+imgCounter+"' style='width: 80vw;padding: 5px;'>");
-                   $("#p"+imgCounter).attr("src",result);
-                   imgCounter++;
-              }
-            });
-        }
 
         // set beacon event handler as callback function
         beaconManager.onBeaconChanged(beaconHandler);
@@ -128,87 +113,10 @@
   <br/>
   <input type="button" onclick="takePhoto()" value="take a photo"/>
   <hr/>
-  <div id="itemArea1" class="itemArea">
-    Question 1:
-    <select>
-      <option value="">TBS</option>
-      <option value="normal">Normal</option>
-      <option value="fc">Further Check</option>
-    </select>
-    <br/><br/>
-    Question 2:
-    <select>
-      <option value="">TBS</option>
-      <option value="normal">Normal</option>
-      <option value="fc">Further Check</option>
-    </select>
-    <br/><br/>
-    Question 3:
-    <select>
-      <option value="">TBS</option>
-      <option value="normal">Normal</option>
-      <option value="fc">Further Check</option>
-    </select>
-    <br/>
-    <div id="imageArea1"></div>
-  </div>
+  <div id="itemArea">
+   <img src="http://placehold.it/300x500/007C2D/FFF200" alt="">
+   </div>
 
-  <br/>
-
-  <div id="itemArea2" class="itemArea">
-    Question 4:
-    <select>
-      <option value="">TBS</option>
-      <option value="normal">Normal</option>
-      <option value="fc">Further Check</option>
-    </select>
-    <br/><br/>
-    Question 5:
-    <select>
-      <option value="">TBS</option>
-      <option value="normal">Normal</option>
-      <option value="fc">Further Check</option>
-    </select>
-    <br/><br/>
-    Question 6:
-    <select>
-      <option value="">TBS</option>
-      <option value="normal">Normal</option>
-      <option value="fc">Further Check</option>
-    </select>
-    <br/>
-    <div id="imageArea2"></div>
-  </div>
-
-  <br/>
-
-
-  <div id="itemArea3" class="itemArea">
-    Question 7:
-    <select>
-      <option value="">TBS</option>
-      <option value="normal">Normal</option>
-      <option value="fc">Further Check</option>
-    </select>
-    <br/><br/>
-    Question 8:
-    <select>
-      <option value="">TBS</option>
-      <option value="normal">Normal</option>
-      <option value="fc">Further Check</option>
-    </select>
-    <br/><br/>
-    Question 9:
-    <select>
-      <option value="">TBS</option>
-      <option value="normal">Normal</option>
-      <option value="fc">Further Check</option>
-    </select>
-    <br/>
-    <div id="imageArea3"></div>
-  </div>
-
-  <br/>
 
 </body>
 
