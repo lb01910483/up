@@ -61,17 +61,16 @@
               {
                 nearestArea=1;
 
-                $("div").append(' <img src="http://placehold.it/300x500/007C2D/FFF200" alt="">');
               }
               else if(beaconArray[i].name=="area02" && beaconArray[i].px==1)
               {
                 nearestArea=2;
-                  $("div").append(' <img src="http://placehold.it/300x500/FF0000/FFF200" alt="">');
+
               }
               else if(beaconArray[i].name=="area03" && beaconArray[i].px==1)
               {
                 nearestArea=3;
-                  $("div").append(' <img src="http://placehold.it/300x500/0000E3/FFF200" alt="">');
+                
 
               }
               
@@ -83,7 +82,8 @@
             if(nearestArea!=0)
             {
               lastNearestArea=nearestArea;
-
+              $(".itemArea").removeClass("currentArea"+nearestArea);
+              $("#itemArea"+nearestArea).addClass("currentArea"+nearestArea);
 
               $("#locationName").html(locationDisplayName[nearestArea-1]);
             }
@@ -92,6 +92,8 @@
               $(".itemArea").removeClass("currentArea");
             }
         } 
+
+
 
         // set beacon event handler as callback function
         beaconManager.onBeaconChanged(beaconHandler);
@@ -113,9 +115,22 @@
   <br/>
   <input type="button" onclick="takePhoto()" value="take a photo"/>
   <hr/>
-  <div id="itemArea">
+  <div id="itemArea1" class="itemArea">
+   
+  </div>
 
-   </div>
+  
+
+  <div id="itemArea2" class="itemArea">
+   
+  </div>
+
+
+
+  <div id="itemArea3" class="itemArea">
+   
+  </div>
+
 
 
 </body>

@@ -29,8 +29,20 @@ body {
    padding: 5px;
 }
 
-.currentArea
+
+.currentArea1
 {
-	border: 3px solid red;
-	background-color: #FFFFBB; 
+background-image: url("http://placehold.it/300x500/007C2D/FFF200");
+}
+
+.currentArea2
+{
+background-image: url("http://placehold.it/300x500/FF0000/FFF200");
+
+}
+
+.currentArea3
+{
+background-image: url("http://placehold.it/300x500/0000E3/FFF200");
+
 }
