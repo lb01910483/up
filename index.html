@@ -82,7 +82,9 @@
             if(nearestArea!=0)
             {
               lastNearestArea=nearestArea;
-              $(".itemArea").removeClass("currentArea"+nearestArea);
+              $(".itemArea").removeClass("currentArea1");
+              $(".itemArea").removeClass("currentArea2");
+              $(".itemArea").removeClass("currentArea3");
               $("#itemArea"+nearestArea).addClass("currentArea"+nearestArea);
 
               $("#locationName").html(locationDisplayName[nearestArea-1]);
